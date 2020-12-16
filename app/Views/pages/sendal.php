@@ -36,7 +36,7 @@ function get_Item($jumlah)
     $result = curl_exec($ch);
     return $result = json_decode($result, true);
 }
-$jumlah = 100;
+$jumlah = 20;
 $jumlahItem = get_Item($jumlah);
 ?>
 <div class="container">
@@ -83,7 +83,7 @@ $jumlahItem = get_Item($jumlah);
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Movie Search</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Detail Barang</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

@@ -35,6 +35,20 @@ class Pages extends BaseController
         ];
         return view('pages/pakaian', $data);
     }
+    public function hubungi()
+    {
+        $data = [
+            'judul' => 'Hubungi',
+        ];
+        return view('pages/hubungi', $data);
+    }
+    public function kunjungi()
+    {
+        $data = [
+            'judul' => 'Kunjungi',
+        ];
+        return view('pages/kunjungi', $data);
+    }
     //--------------------------------------------------------------------
 
 }
