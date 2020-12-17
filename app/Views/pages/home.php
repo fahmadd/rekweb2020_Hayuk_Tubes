@@ -20,7 +20,7 @@
         <div class="carousel-item active">
             <img src="/img/fashion6.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-4">CHANGE YOUR STYLE <br><span class="font-weight-bold">WITH HAYUK FASHION</span> </h1>
+                <h1 class="display-4">CHANGE YOUR STYLE <br><span class="font-weight-bold">WITH HAYUK </span> </h1>
                 <hr class="my-4">
                 <p class="lead">Tempat Fashion Terbaik</p>
                 <a class="btn btn-primary btn-lg font-weight-bold" href="<?= base_url('/pages/kunjungi'); ?>" role="button">KUNJUNGI</a>
