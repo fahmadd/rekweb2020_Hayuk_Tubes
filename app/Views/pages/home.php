@@ -1,144 +1,126 @@
 <?= $this->extend('layout/template'); ?>
 <?= $this->section('content'); ?>
-
-<!-- <div class="jumbotron">
+<div class="page-holder">
+    <!-- HERO SECTION-->
     <div class="container">
-        <h1 class="display-4">CHANGE YOUR STYLE <br><span class="font-weight-bold">WITH HAYUK FASHION</span> </h1>
-        <hr class="my-4">
-        <p class="lead">Tempat Fashion Terbaik di Kota Bandung</p>
-        <a class="btn btn-primary btn-lg font-weight-bold" href="#" role="button">KUNJUNGI</a>
-    </div>
-</div> -->
-<!-- Slider -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="/img/fashion6.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-4">CHANGE YOUR STYLE <br><span class="font-weight-bold">WITH HAYUK </span> </h1>
-                <hr class="my-4">
-                <p class="lead">Tempat Fashion Terbaik</p>
-                <a class="btn btn-primary btn-lg font-weight-bold" href="<?= base_url('/pages/kunjungi'); ?>" role="button">KUNJUNGI</a>
+        <section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style="background: url(/img/hero-banner-alt.jpg)">
+            <div class="container py-5">
+                <div class="row px-4 px-lg-5">
+                    <div class="col-lg-6">
+                        <p class="text-muted small text-uppercase mb-2">New Inspiration 2020</p>
+                        <h1 class="h2 text-uppercase mb-3">20% off on new season</h1><a class="btn btn-dark" href="shop.html">Browse collections</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <img src="/img/fashion3.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-4">CHANGE YOUR STYLE <br><span class="font-weight-bold">WITH HAYUK FASHION</span> </h1>
-                <hr class="my-4">
-                <p class="lead">Tempat Fashion Terbaik</p>
-                <a class="btn btn-primary btn-lg font-weight-bold" href="<?= base_url('/pages/kunjungi'); ?>" role="button">KUNJUNGI</a>
+        </section>
+        <!-- CATEGORIES SECTION-->
+        <section class="pt-5">
+            <header class="text-center">
+                <p class="small text-muted small text-uppercase mb-1">Carefully created collections</p>
+                <h2 class="h5 text-uppercase mb-4">Browse our categories</h2>
+            </header>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0"><a class="category-item" href="shop.html"><img class="img-fluid" src="/img/cat-img-1.jpg" alt=""><strong class="category-item-title">Clothes</strong></a></div>
+                <div class="col-md-4 mb-4 mb-md-0"><a class="category-item mb-4" href="shop.html"><img class="img-fluid" src="/img/cat-img-2.jpg" alt=""><strong class="category-item-title">Shoes</strong></a><a class="category-item" href="shop.html"><img class="img-fluid" src="/img/cat-img-3.jpg" alt=""><strong class="category-item-title">Watches</strong></a></div>
+                <div class="col-md-4"><a class="category-item" href="shop.html"><img class="img-fluid" src="/img/cat-img-4.jpg" alt=""><strong class="category-item-title">Electronics</strong></a></div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <img src="/img/fashion2.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-4">CHANGE YOUR STYLE <br><span class="font-weight-bold">WITH HAYUK FASHION</span> </h1>
-                <hr class="my-4">
-                <p class="lead">Tempat Fashion Terbaik</p>
-                <a class="btn btn-primary btn-lg font-weight-bold" href="<?= base_url('/pages/kunjungi'); ?>" role="button">KUNJUNGI</a>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="/img/fashion1.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-4">CHANGE YOUR STYLE <br><span class="font-weight-bold">WITH HAYUK FASHION</span> </h1>
-                <hr class="my-4">
-                <p class="lead">Tempat Fashion Terbaik</p>
-                <a class="btn btn-primary btn-lg font-weight-bold" href="<?= base_url('/pages/kunjungi'); ?>" role="button">KUNJUNGI</a>
-            </div>
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-<!-- akhir slider -->
+        </section>
+        <!-- TRENDING PRODUCTS-->
+        <section class="py-5">
+            <header>
+                <p class="small text-muted small text-uppercase mb-1">Made the hard way</p>
+                <h2 class="h5 text-uppercase mb-4">Top trending products</h2>
+            </header>
+            <div class="row">
+                <!-- PRODUCT-->
+                <?php foreach ($barangTrending as $brg) : ?>
 
-<!-- Info Panel -->
-<div class="row justify-content-center">
-    <div class="col-lg-10 info-panel">
-        <div class="row">
-            <div class="col-lg">
-                <img src="/img/employee.png" alt="employee" class="float-left">
-                <h4>24 Hours</h4>
-                <p>Lorem ipsum dolor sit amet.</p>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="product text-center">
+                            <div class="position-relative mb-3">
+                                <div class="badge text-white badge-"></div><a class="d-block" href="/pages/detail/<?= $brg['kode']; ?>/<?= $brg['kategori']; ?>"><img class="img-fluid w-100" src="https://cf.shopee.co.id/file/<?= $brg['gambar']; ?>" alt="..."></a>
+                                <div class="product-overlay">
+                                    <ul class="mb-0 list-inline">
+                                        <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="/cart/update/<?= $brg['kode']; ?>">Add to cart</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h6> <a class="reset-anchor" href="/pages/detail/<?= $brg['kode']; ?>/<?= $brg['kategori']; ?>"><?= $brg['nama']; ?></a></h6>
+                            <p class="small text-muted"><?= $brg['harga']; ?>
+                            </p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
-            <div class="col-lg">
-                <img src="/img/hires.png" alt="High Res" class="float-left">
-                <h4>High-Res</h4>
-                <p>Lorem ipsum dolor sit amet.</p>
+        </section>
+        <!-- SERVICES-->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-4 mb-3 mb-lg-0">
+                        <div class="d-inline-block">
+                            <div class="media align-items-end">
+                                <svg class="svg-icon svg-icon-big svg-icon-light">
+                                    <use xlink:href="#delivery-time-1"> </use>
+                                </svg>
+                                <div class="media-body text-left ml-3">
+                                    <h6 class="text-uppercase mb-1">Free shipping</h6>
+                                    <p class="text-small mb-0 text-muted">Free shipping worlwide</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3 mb-lg-0">
+                        <div class="d-inline-block">
+                            <div class="media align-items-end">
+                                <svg class="svg-icon svg-icon-big svg-icon-light">
+                                    <use xlink:href="#helpline-24h-1"> </use>
+                                </svg>
+                                <div class="media-body text-left ml-3">
+                                    <h6 class="text-uppercase mb-1">24 x 7 service</h6>
+                                    <p class="text-small mb-0 text-muted">Free shipping worlwide</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-inline-block">
+                            <div class="media align-items-end">
+                                <svg class="svg-icon svg-icon-big svg-icon-light">
+                                    <use xlink:href="#label-tag-1"> </use>
+                                </svg>
+                                <div class="media-body text-left ml-3">
+                                    <h6 class="text-uppercase mb-1">Festival offer</h6>
+                                    <p class="text-small mb-0 text-muted">Free shipping worlwide</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg">
-                <img src="/img/security.png" alt="security" class="float-left">
-                <h4>Security</h4>
-                <p>Lorem ipsum dolor sit amet.</p>
+        </section>
+        <!-- NEWSLETTER-->
+        <section class="py-5">
+            <div class="container p-0">
+                <div class="row">
+                    <div class="col-lg-6 mb-3 mb-lg-0">
+                        <h5 class="text-uppercase">Let's be friends!</h5>
+                        <p class="text-small text-muted mb-0">Nisi nisi tempor consequat laboris nisi.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form action="#">
+                            <div class="input-group flex-column flex-sm-row mb-3">
+                                <input class="form-control form-control-lg py-3" type="email" placeholder="Enter your email address" aria-describedby="button-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-dark btn-block" id="button-addon2" type="submit">Subscribe</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<!-- Akhir Panel -->
-
-<!-- workingspace -->
-<div class="container">
-    <div class="row workingspace">
-        <div class="col-6">
-            <img src="/img/workingspace.png" alt="Workingspace" class="img-fluid">
-        </div>
-        <div class="col-5">
-            <h3>Your <span>Style</span> Change Your <span>Life</span> </h3>
-            <p>Penting memang untuk bereskplorasi dengan gayamu, supaya nggak terlihat membosankan dan hidupmu lebih berwarna. Misal, sekali-kali boleh lah ‘tabrak’ warna biar penampilanmu makin asyik.</p>
-        </div>
-    </div>
-</div>
-<!-- Akhir workingspace -->
-
-<!-- Testimonial -->
-<section class="testimonial">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <h5>"Gaya yang sederhana memang segalanya, karena sebenarnya inilah kunci buatmu tampil apa adanya di manapun berada"</h5>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-6 justify-content-center d-flex">
-                <figure class="figure">
-                    <img src="/img/img1.png" class="figure-img img-fluid rounded-circle" alt="testi 1">
-                </figure>
-                <figure class="figure">
-                    <img src="/img/img2.png" class="figure-img img-fluid rounded-circle utama" alt="testi 2">
-                    <figcaption class="figure-caption">
-                        <h5>Sheila</h5>
-                        <p>Mahasiswa</p>
-                    </figcaption>
-                </figure>
-                <figure class="figure">
-                    <img src="/img/img3.png" class="figure-img img-fluid rounded-circle" alt="testi 3">
-                </figure>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Akhir Testimonial -->
-
-<!-- Footer -->
-<div class="row footer">
-    <div class="col text-center">
-        <p>2020 All Rights Reserved By HAYUK FASHION GROUP</p>
+        </section>
     </div>
 </div>
-<!-- Akhir Footer -->
 
 <?= $this->endSection(); ?>

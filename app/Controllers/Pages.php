@@ -2,53 +2,29 @@
 
 namespace App\Controllers;
 
+use App\Models\BarangTrendingModel;
+
 class Pages extends BaseController
 {
+    protected $barangTrendingModel;
+
+    public function __construct()
+    {
+        $this->barangTrendingModel = new BarangTrendingModel();
+    }
+
     public function index()
     {
         $data = [
-            'judul' => 'Home | WebProgrammingUNPAS'
+            'judul' => 'Home | WebProgrammingUNPAS',
+            'barangTrending' => $this->barangTrendingModel->getBarang()
         ];
+
         return view('pages/home', $data);
     }
 
-    public function sepatu()
-    {
-        $data = [
-            'judul' => 'Sepatu'
-        ];
-        return view('pages/sepatu', $data);
-    }
 
-    public function sendal()
-    {
-        $data = [
-            'judul' => 'Sendal',
-        ];
-        return view('pages/sendal', $data);
-    }
 
-    public function pakaian()
-    {
-        $data = [
-            'judul' => 'Pakaian',
-        ];
-        return view('pages/pakaian', $data);
-    }
-    public function hubungi()
-    {
-        $data = [
-            'judul' => 'Hubungi',
-        ];
-        return view('pages/hubungi', $data);
-    }
-    public function kunjungi()
-    {
-        $data = [
-            'judul' => 'Kunjungi',
-        ];
-        return view('pages/kunjungi', $data);
-    }
     //--------------------------------------------------------------------
 
 }

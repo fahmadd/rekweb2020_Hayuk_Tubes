@@ -27,6 +27,12 @@ $routes->setDefaultNamespace('App\Controllers');
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
+$routes->get('/pages/detail/(:any)/(:any)', 'Home::detail/$1/$2');
+$routes->get('/pages/checkout', 'Checkout::index');
+$routes->get('/pages/cart', 'Cart::index');
+$routes->get('/pages/cart/delete/(:any)', 'Cart::delete/$1');
+$routes->get('/cart/update/(:any)', 'Cart::update/$1');
+
 
 /**
  * --------------------------------------------------------------------

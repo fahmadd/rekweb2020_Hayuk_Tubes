@@ -1,22 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand font-weight-bold" href="/login"><img src="/img/logo3.png" width="40">HAYUK FASHION</a>
-        <button class="navbar-toggler navbar-toogler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ml-auto">
-                <a class="nav-link active js-scroll-trigger font-weight-bold" href="<?= base_url('/'); ?>">HOME</a>
-                <a class="nav-link js-scroll-trigger font-weight-bold" href="<?= base_url('/pages/sepatu'); ?>">SEPATU</a>
-                <a class="nav-link js-scroll-trigger font-weight-bold" href="<?= base_url('/pages/sendal'); ?>">SENDAL</a>
-                <a class="nav-link js-scroll-trigger font-weight-bold" href="<?= base_url('/pages/pakaian'); ?>">PAKAIAN</a>
-                <a class="nav-link js-scroll-trigger font-weight-bold" href="<?= base_url('/pages/hubungi'); ?>">HUBUNGI KAMI</a>
-            </div>
-            <?php if (logged_in()) : ?>
-                <a class="nav-item" href="/logout">Logout</a>
-            <?php else : ?>
-                <a class="nav-item btn btn-primary font-weight-bold " href="/login">Login</span> </a>
-            <?php endif; ?>
+<div class="page-holder">
+    <!-- navbar-->
+    <header class="header bg-white">
+        <div class="container px-0 px-lg-3">
+            <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0"><a class="navbar-brand" href="index.html"><span class="font-weight-bold text-uppercase text-dark">Boutique</span></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <!-- Link--><a class="nav-link" href="pages/home.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Link--><a class="nav-link" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                            <div class="dropdown-menu mt-3" aria-labelledby="pagesDropdown"><a class="dropdown-item border-0 transition-link" href="index.html">Homepage</a><a class="dropdown-item border-0 transition-link" href="shop.html">Category</a><a class="dropdown-item border-0 transition-link" href="detail.html">Product detail</a><a class="dropdown-item border-0 transition-link" href="cart.html">Shopping cart</a><a class="dropdown-item border-0 transition-link" href="checkout.html">Checkout</a></div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="/pages/cart"> <i class="fas fa-dolly-flatbed mr-1 text-gray"></i>Cart<small class="text-gray">(2)</small></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> <i class="far fa-heart mr-1"></i><small class="text-gray"> (0)</small></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> <i class="fas fa-user-alt mr-1 text-gray"></i>Login</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </div>
-</nav>
+    </header>
