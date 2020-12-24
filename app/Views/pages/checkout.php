@@ -130,6 +130,18 @@
                 </div>
                 <!-- ORDER SUMMARY-->
                 <div class="col-lg-4">
+                    <?php
+                    function rupiah($angka)
+                    {
+                        $hasil = 'Rp. ' . number_format($angka, 0, ",", ".");
+                        return $hasil;
+                    }
+
+                    function rphilang($angka)
+                    {
+                        $hasil = '' . number_format($angka, 0, ",", ".");
+                        return $hasil;
+                    } ?>
                     <div class="card border-0 rounded-0 p-lg-4 bg-light">
                         <div class="card-body">
                             <h5 class="text-uppercase mb-4">Your order</h5>
@@ -137,10 +149,10 @@
                                 <?php $totalHarga = 0 ?>
                                 <?php foreach ($barang as $brg) : ?>
                                     <?php $totalHarga += $brg['harga'] ?>
-                                    <li class="d-flex align-items-center justify-content-between"><strong class="small font-weight-bold"><?= $brg['nama']; ?></strong><span class="text-muted small"><?= $brg['harga']; ?></span></li>
+                                    <li class="d-flex align-items-center justify-content-between"><strong class="small font-weight-bold"><?= $brg['nama']; ?></strong><span class="text-muted small"><?= rphilang($brg['harga']); ?></span></li>
                                     <li class="border-bottom my-2"></li>
                                 <?php endforeach; ?>
-                                <li class="d-flex align-items-center justify-content-between"><strong class="text-uppercase small font-weight-bold">Total</strong><span><?= $totalHarga; ?></span></li>
+                                <li class="d-flex align-items-center justify-content-between"><strong class="text-uppercase small font-weight-bold">Total</strong><span><?= rupiah($totalHarga); ?></span></li>
                             </ul>
                         </div>
                     </div>

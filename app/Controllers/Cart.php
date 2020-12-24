@@ -31,6 +31,7 @@ class Cart extends BaseController
         $this->cartModel->save([
             'kode' => $hasil['kode'],
             'nama' => $hasil['nama'],
+            'kategori' => $hasil['kategori'],
             'harga' => $hasil['harga'],
             'gambar' => $hasil['gambar'],
         ]);

@@ -8,7 +8,7 @@ class BarangModel extends Model
 {
     protected $table = 'product';
     protected $useTimestamps = true;
-    protected $allowedFields = ['kode', 'nama', 'kategori', 'harga', 'gambar', 'gambar2', 'gambar3'];
+    protected $allowedFields = ['kode', 'nama', 'kategori', 'deskripsi', 'detail', 'harga', 'gambar', 'gambar2', 'gambar3'];
 
     public function getBarang($kode = false)
     {

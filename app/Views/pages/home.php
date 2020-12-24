@@ -3,11 +3,11 @@
 <div class="page-holder">
     <!-- HERO SECTION-->
     <div class="container">
-        <section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style="background: url(/img/hero-banner-alt.jpg)">
+        <section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style="background: url(/img/banner4.jpg)">
             <div class="container py-5">
                 <div class="row px-4 px-lg-5">
                     <div class="col-lg-6">
-                        <p class="text-muted small text-uppercase mb-2">New Inspiration 2020</p>
+                        <p class="text-muted small text-uppercase mb-2">New Inspiration 2021</p>
                         <h1 class="h2 text-uppercase mb-3">20% off on new season</h1><a class="btn btn-dark" href="shop.html">Browse collections</a>
                     </div>
                 </div>
@@ -20,9 +20,11 @@
                 <h2 class="h5 text-uppercase mb-4">Browse our categories</h2>
             </header>
             <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0"><a class="category-item" href="shop.html"><img class="img-fluid" src="/img/cat-img-1.jpg" alt=""><strong class="category-item-title">Clothes</strong></a></div>
-                <div class="col-md-4 mb-4 mb-md-0"><a class="category-item mb-4" href="shop.html"><img class="img-fluid" src="/img/cat-img-2.jpg" alt=""><strong class="category-item-title">Shoes</strong></a><a class="category-item" href="shop.html"><img class="img-fluid" src="/img/cat-img-3.jpg" alt=""><strong class="category-item-title">Watches</strong></a></div>
-                <div class="col-md-4"><a class="category-item" href="shop.html"><img class="img-fluid" src="/img/cat-img-4.jpg" alt=""><strong class="category-item-title">Electronics</strong></a></div>
+                <div class="col-md-4 mb-4 mb-md-0"><a class="category-item" href="/pages/clothes"><img class="img-fluid" src="/img/clothes.jpg" alt=""><strong class="category-item-title">Clothes</strong></a></div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <a class="category-item mb-4" href="/pages/shoes"><img class="img-fluid" src="/img/shoes.jpg" alt="" width="750" height="500"><strong class="category-item-title">Shoes</strong></a>
+                    <a class="category-item" href="/pages/cap"><img class="img-fluid" src="/img/cap.jpg" alt=""><strong class="category-item-title">Cap</strong></a></div>
+                <div class="col-md-4"><a class="category-item" href="/pages/bag"><img class="img-fluid" src="/img/bag.jpg" alt=""><strong class="category-item-title">Bag</strong></a></div>
             </div>
         </section>
         <!-- TRENDING PRODUCTS-->
@@ -33,12 +35,18 @@
             </header>
             <div class="row">
                 <!-- PRODUCT-->
+                <?php
+                function rupiah($angka)
+                {
+                    $hasil = 'Rp. ' . number_format($angka, 0, ",", ".");
+                    return $hasil;
+                } ?>
                 <?php foreach ($barangTrending as $brg) : ?>
 
                     <div class="col-xl-3 col-lg-4 col-sm-6">
                         <div class="product text-center">
                             <div class="position-relative mb-3">
-                                <div class="badge text-white badge-"></div><a class="d-block" href="/pages/detail/<?= $brg['kode']; ?>/<?= $brg['kategori']; ?>"><img class="img-fluid w-100" src="https://cf.shopee.co.id/file/<?= $brg['gambar']; ?>" alt="..."></a>
+                                <div class="badge text-white badge-"></div><a class="d-block" href="/pages/trending/detail/<?= $brg['kode']; ?>/<?= $brg['kategori']; ?>"><img class="img-fluid w-100" src="https://cf.shopee.co.id/file/<?= $brg['gambar']; ?>" alt="..."></a>
                                 <div class="product-overlay">
                                     <ul class="mb-0 list-inline">
                                         <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="/cart/update/<?= $brg['kode']; ?>">Add to cart</a></li>
@@ -46,8 +54,7 @@
                                 </div>
                             </div>
                             <h6> <a class="reset-anchor" href="/pages/detail/<?= $brg['kode']; ?>/<?= $brg['kategori']; ?>"><?= $brg['nama']; ?></a></h6>
-                            <p class="small text-muted"><?= $brg['harga']; ?>
-                            </p>
+                            <p class="small text-muted"><?= rupiah($brg['harga']); ?></p>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -99,27 +106,7 @@
                 </div>
             </div>
         </section>
-        <!-- NEWSLETTER-->
-        <section class="py-5">
-            <div class="container p-0">
-                <div class="row">
-                    <div class="col-lg-6 mb-3 mb-lg-0">
-                        <h5 class="text-uppercase">Let's be friends!</h5>
-                        <p class="text-small text-muted mb-0">Nisi nisi tempor consequat laboris nisi.</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <form action="#">
-                            <div class="input-group flex-column flex-sm-row mb-3">
-                                <input class="form-control form-control-lg py-3" type="email" placeholder="Enter your email address" aria-describedby="button-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-dark btn-block" id="button-addon2" type="submit">Subscribe</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <br><br>
     </div>
 </div>
 

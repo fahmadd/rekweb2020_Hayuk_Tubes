@@ -27,7 +27,14 @@ $routes->setDefaultNamespace('App\Controllers');
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
-$routes->get('/pages/detail/(:any)/(:any)', 'Home::detail/$1/$2');
+$routes->get('/pages/all', 'Pages::all');
+$routes->get('/pages/clothes', 'Pages::byKategori/pakaian');
+$routes->get('/pages/shoes', 'Pages::byKategori/sepatu');
+$routes->get('/pages/bag', 'Pages::byKategori/tas');
+$routes->get('/pages/cap', 'Pages::byKategori/topi');
+$routes->get('/pages/kids', 'Pages::byKategori/anak');
+$routes->get('/pages/detail/(:any)/(:any)', 'Pages::detail/$1/$2');
+$routes->get('/pages/trending/detail/(:any)/(:any)', 'Home::detail/$1/$2');
 $routes->get('/pages/checkout', 'Checkout::index');
 $routes->get('/pages/cart', 'Cart::index');
 $routes->get('/pages/cart/delete/(:any)', 'Cart::delete/$1');

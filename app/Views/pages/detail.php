@@ -2,46 +2,8 @@
 <?= $this->section('content'); ?>
 
 <body>
+
     <div class="page-holder bg-light">
-        <!--  Modal -->
-        <div class="modal fade" id="productView" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body p-0">
-                        <div class="row align-items-stretch">
-                            <div class="col-lg-6 p-lg-0"><a class="product-view d-block h-100 bg-cover bg-center" style="background: url(/img/product-5.jpg)" href="/img/product-5.jpg" data-lightbox="productview" title="Red digital smartwatch"></a><a class="d-none" href="/img/product-5-alt-1.jpg" title="Red digital smartwatch" data-lightbox="productview"></a><a class="d-none" href="/img/product-5-alt-2.jpg" title="Red digital smartwatch" data-lightbox="productview"></a></div>
-                            <div class="col-lg-6">
-                                <button class="close p-4" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                <div class="p-5 my-md-4">
-                                    <ul class="list-inline mb-2">
-                                        <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
-                                        <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
-                                        <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
-                                        <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
-                                        <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
-                                    </ul>
-                                    <h2 class="h4">Red digital smartwatch</h2>
-                                    <p class="text-muted">$250</p>
-                                    <p class="text-small mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ullamcorper leo, eget euismod orci. Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Vestibulum ultricies aliquam convallis.</p>
-                                    <div class="row align-items-stretch mb-4">
-                                        <div class="col-sm-7 pr-sm-0">
-                                            <div class="border d-flex align-items-center justify-content-between py-1 px-3"><span class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
-                                                <div class="quantity">
-                                                    <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
-                                                    <input class="form-control border-0 shadow-0 p-0" type="text" value="1">
-                                                    <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-5 pl-sm-0"><a class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" href="cart.html">Add to cart</a></div>
-                                    </div><a class="btn btn-link text-dark p-0" href="#"><i class="far fa-heart mr-2"></i>Add to wish list</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <section class="py-5">
             <div class="container">
                 <div class="row mb-5">
@@ -70,24 +32,15 @@
                             <li class="list-inline-item m-0"><i class="fas fa-star small text-warning"></i></li>
                         </ul>
                         <h1><?= $barang['nama']; ?></h1>
-                        <p class="text-muted lead"><?= $barang['harga']; ?></p>
-                        <p class="text-small mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ullamcorper leo, eget euismod orci. Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Vestibulum ultricies aliquam convallis.</p>
+                        <p class="text-muted lead"><?= rupiah($barang['harga']); ?></p>
+                        <p class="text-small mb-4"><?= $barang['deskripsi']; ?></p>
                         <div class="row align-items-stretch mb-4">
-                            <div class="col-sm-5 pr-sm-0">
-                                <div class="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white"><span class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
-                                    <div class="quantity">
-                                        <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
-                                        <input class="form-control border-0 shadow-0 p-0" type="text" value="1">
-                                        <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 pl-sm-0"><a class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" href="cart.html">Add to cart</a></div>
-                        </div><a class="btn btn-link text-dark p-0 mb-4" href="#"><i class="far fa-heart mr-2"></i>Add to wish list</a><br>
+
+                            <div class="col-sm-3 pl-sm-0 ml-3"><a class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" href="/cart/update/<?= $barang['kode']; ?>">Add to cart</a></div>
+                        </div>
                         <ul class="list-unstyled small d-inline-block">
-                            <li class="px-3 py-2 mb-1 bg-white"><strong class="text-uppercase">SKU:</strong><span class="ml-2 text-muted"><?= $barang['kode']; ?></span></li>
-                            <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Category:</strong><a class="reset-anchor ml-2" href="#"><?= $barang['kategori']; ?></a></li>
-                            <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Tags:</strong><a class="reset-anchor ml-2" href="#">Innovation</a></li>
+                            <li class="px-1 py-2 mb-1 bg-white"><strong class="text-uppercase">SKU:</strong><span class="ml-2 text-muted"><?= $barang['kode']; ?></span></li>
+                            <li class="px-1 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Category:</strong><a class="reset-anchor ml-2" href="#"><?= $barang['kategori']; ?></a></li>
                         </ul>
                     </div>
                 </div>
@@ -100,17 +53,17 @@
                     <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
                         <div class="p-4 p-lg-5 bg-white">
                             <h6 class="text-uppercase">Product description </h6>
-                            <p class="text-muted text-small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p class="text-muted text-small mb-0"><?= $barang['detail']; ?></p>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
                         <div class="p-4 p-lg-5 bg-white">
                             <div class="row">
                                 <div class="col-lg-8">
-                                    <div class="media mb-3"><img class="rounded-circle" src="/img/customer-1.png" alt="" width="50">
-                                        <div class="media-body ml-3">
-                                            <h6 class="mb-0 text-uppercase">Jason Doe</h6>
-                                            <p class="small text-muted mb-0 text-uppercase">20 May 2020</p>
+                                    <div class="media"><img class="rounded-circle" src="/img/riview3.jpg" alt="" width="50" height="50">
+                                        <div class="media-body ml-3 mb-3">
+                                            <h6 class="mb-0 text-uppercase">Michael Nababan</h6>
+                                            <p class="small text-muted mb-0 text-uppercase">20 MARET 2020</p>
                                             <ul class="list-inline mb-1 text-xs">
                                                 <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
                                                 <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
@@ -118,12 +71,22 @@
                                                 <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
                                                 <li class="list-inline-item m-0"><i class="fas fa-star-half-alt text-warning"></i></li>
                                             </ul>
-                                            <p class="text-small mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <p class="text-small mb-0 text-muted">Recommended, barang ori, kemarin bayar hari ini sudah sampai.</p>
                                         </div>
                                     </div>
-                                    <div class="media"><img class="rounded-circle" src="/img/customer-2.png" alt="" width="50">
+                                    <div class="media mb-3"><img class="rounded-circle" src="/img/riview4.jpg" alt="" width="50" height="50">
                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 text-uppercase">Jason Doe</h6>
+                                            <h6 class="mb-0 text-uppercase">Virgiawan Ramdhani</h6>
+                                            <p class="small text-muted mb-0 text-uppercase">20 May 2020</p>
+                                            <ul class="list-inline mb-1 text-xs">
+                                                <li class="list-inline-item m-0"><i class="fas fa-star-half-alt text-warning"></i></li>
+                                            </ul>
+                                            <p class="text-small mb-0 text-muted">Pengiriman lama, seler slow respon, ukuran salah!! Mengecewakan!</p>
+                                        </div>
+                                    </div>
+                                    <div class="media mb-3"><img class="rounded-circle" src="/img/riview2.jpg" alt="" width="50" height="50">
+                                        <div class="media-body ml-3">
+                                            <h6 class="mb-0 text-uppercase">Fikri Ahmad</h6>
                                             <p class="small text-muted mb-0 text-uppercase">20 May 2020</p>
                                             <ul class="list-inline mb-1 text-xs">
                                                 <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
@@ -132,7 +95,19 @@
                                                 <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
                                                 <li class="list-inline-item m-0"><i class="fas fa-star-half-alt text-warning"></i></li>
                                             </ul>
-                                            <p class="text-small mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <p class="text-small mb-0 text-muted">Anjing Bagus Banget!!!</p>
+                                        </div>
+                                    </div>
+                                    <div class="media"><img class="rounded-circle" src="/img/riview1.jpg" alt="" width="50" height="50">
+                                        <div class="media-body ml-3">
+                                            <h6 class="mb-0 text-uppercase">Tirta Salsabila</h6>
+                                            <p class="small text-muted mb-0 text-uppercase">20 May 2020</p>
+                                            <ul class="list-inline mb-1 text-xs">
+                                                <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fas fa-star-half-alt text-warning"></i></li>
+                                            </ul>
+                                            <p class="text-small mb-0 text-muted">Pengiriman lama, namun produk bagus, dan nyaman digunakan!</p>
                                         </div>
                                     </div>
                                 </div>
@@ -143,65 +118,27 @@
                 <!-- RELATED PRODUCTS-->
                 <h2 class="h5 text-uppercase mb-4">Related products</h2>
                 <div class="row">
-                    <!-- PRODUCT-->
+                    <?php
+                    function rupiah($angka)
+                    {
+                        $hasil = 'Rp. ' . number_format($angka, 0, ",", ".");
+                        return $hasil;
+                    } ?>
                     <?php foreach ($barangByKategori as $brg) : ?>
+                        <!-- PRODUCT-->
                         <div class="col-lg-3 col-sm-6">
                             <div class="product text-center skel-loader">
-                                <div class="d-block mb-3 position-relative"><a class="d-block" href="/pages/<?= $brg['kode']; ?>/<?= $brg['kategori']; ?>"><img class="img-fluid w-100" src="https://cf.shopee.co.id/file/<?= $brg['gambar']; ?>" alt="..."></a>
+                                <div class="d-block mb-3 position-relative"><a class="d-block" href="/pages/detail/<?= $brg['kode']; ?>/<?= $brg['kategori']; ?>"><img class="img-fluid w-100" src="https://cf.shopee.co.id/file/<?= $brg['gambar']; ?>" alt="..."></a>
                                     <div class="product-overlay">
                                         <ul class="mb-0 list-inline">
-                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="far fa-heart"></i></a></li>
-                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="#">Add to cart</a></li>
-                                            <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-toggle="modal"><i class="fas fa-expand"></i></a></li>
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="/cart/update/<?= $brg['kode']; ?>">Add to cart</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <h6> <a class="reset-anchor" href="detail.html"><?= $brg['nama']; ?></a></h6>
-                                <p class="small text-muted"><?= $brg['harga']; ?></p>
+                                <p class="small text-muted"><?= rupiah($brg['harga']); ?></p>
                             </div>
                         </div>
                     <?php endforeach; ?>
         </section>
-        <footer class="bg-dark text-white">
-            <div class="container py-4">
-                <div class="row py-5">
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <h6 class="text-uppercase mb-3">Customer services</h6>
-                        <ul class="list-unstyled mb-0">
-                            <li><a class="footer-link" href="#">Help &amp; Contact Us</a></li>
-                            <li><a class="footer-link" href="#">Returns &amp; Refunds</a></li>
-                            <li><a class="footer-link" href="#">Online Stores</a></li>
-                            <li><a class="footer-link" href="#">Terms &amp; Conditions</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <h6 class="text-uppercase mb-3">Company</h6>
-                        <ul class="list-unstyled mb-0">
-                            <li><a class="footer-link" href="#">What We Do</a></li>
-                            <li><a class="footer-link" href="#">Available Services</a></li>
-                            <li><a class="footer-link" href="#">Latest Posts</a></li>
-                            <li><a class="footer-link" href="#">FAQs</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h6 class="text-uppercase mb-3">Social media</h6>
-                        <ul class="list-unstyled mb-0">
-                            <li><a class="footer-link" href="#">Twitter</a></li>
-                            <li><a class="footer-link" href="#">Instagram</a></li>
-                            <li><a class="footer-link" href="#">Tumblr</a></li>
-                            <li><a class="footer-link" href="#">Pinterest</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="border-top pt-4" style="border-color: #1d1d1d !important">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <p class="small text-muted mb-0">&copy; 2020 All rights reserved.</p>
-                        </div>
-                        <div class="col-lg-6 text-lg-right">
-                            <p class="small text-muted mb-0">Template designed by <a class="text-white reset-anchor" href="https://bootstraptemple.com/p/bootstrap-ecommerce">Bootstrap Temple</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?= $this->endSection(); ?>
+        <?= $this->endSection(); ?>
