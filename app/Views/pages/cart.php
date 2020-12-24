@@ -48,7 +48,7 @@
                                             </div>
                                         </th>
                                         <td class="align-middle border-0">
-                                            <p class="mb-0 small"><?= rupiah($brg['harga']); ?></p>
+                                            <p class="mb-0 small"><?= rphilang($brg['harga']); ?></p>
                                         </td>
                                         <td class="align-middle border-0">
                                             <p class="text-center small mb-1">1</p>
@@ -63,7 +63,7 @@
                 <!-- CART NAV-->
                 <div class="bg-light px-4 py-3">
                     <div class="row align-items-center text-center">
-                        <div class="col-md-6 mb-3 mb-md-0 text-md-left"><a class="btn btn-link p-0 text-dark btn-sm" href="shop.html"><i class="fas fa-long-arrow-alt-left mr-2"> </i>Continue shopping</a></div>
+                        <div class="col-md-6 mb-3 mb-md-0 text-md-left"><a class="btn btn-link p-0 text-dark btn-sm" href="/pages/all"><i class="fas fa-long-arrow-alt-left mr-2"> </i>Continue shopping</a></div>
                         <div class="col-md-6 text-md-right"><a class="btn btn-outline-dark btn-sm" href="/pages/checkout">Procceed to checkout<i class="fas fa-long-arrow-alt-right ml-2"></i></a></div>
                     </div>
                 </div>
@@ -76,6 +76,13 @@
                     $hasil = 'Rp. ' . number_format($angka, 0, ",", ".");
                     return $hasil;
                 }
+
+                function rphilang($angka)
+                {
+                    $hasil = '' . number_format($angka, 0, ",", ".");
+                    return $hasil;
+                }
+
                 ?>
                 <div class="card border-0 rounded-0 p-lg-4 bg-light">
                     <div class="card-body">
