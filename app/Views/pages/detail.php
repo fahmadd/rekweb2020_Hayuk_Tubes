@@ -95,7 +95,7 @@
                                                 <li class="list-inline-item m-0"><i class="fas fa-star text-warning"></i></li>
                                                 <li class="list-inline-item m-0"><i class="fas fa-star-half-alt text-warning"></i></li>
                                             </ul>
-                                            <p class="text-small mb-0 text-muted">Anjing Bagus Banget!!!</p>
+                                            <p class="text-small mb-0 text-muted">Gilaaa Bagus Banget!!!</p>
                                         </div>
                                     </div>
                                     <div class="media"><img class="rounded-circle" src="/img/riview1.jpg" alt="" width="50" height="50">
