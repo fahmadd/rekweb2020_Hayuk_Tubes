@@ -19,7 +19,7 @@ class Pages extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'Home | WebProgrammingUNPAS',
+            'judul' => 'Home | Hayuk Fashion',
             'barangTrending' => $this->barangTrendingModel->getBarang()
         ];
 
@@ -45,7 +45,7 @@ class Pages extends BaseController
     {
 
         $data = [
-            'judul' => 'Home | WebProgrammingUNPAS',
+            'judul' => 'Home | Hayuk Fashion',
             'barang' => $this->barangModel->getBarangByKategori($kategori)
         ];
 

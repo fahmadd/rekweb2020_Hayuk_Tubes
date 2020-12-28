@@ -23,7 +23,7 @@ class LoginFilter implements FilterInterface
 	 *
 	 * @return mixed
 	 */
-	public function before(RequestInterface $reques, $arguments = NULL)
+	public function before(RequestInterface $request, $arguments = NULL)
 	{
 		if (!function_exists('logged_in')) {
 			helper('auth');

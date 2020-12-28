@@ -1,4 +1,6 @@
-<?php namespace Myth\Auth\Authentication\Activators;
+<?php
+
+namespace Myth\Auth\Authentication\Activators;
 
 use Myth\Auth\Config\Auth;
 use Myth\Auth\Entities\User;
@@ -27,8 +29,7 @@ class UserActivator
      */
     public function send(User $user = null): bool
     {
-        if ($this->config->requireActivation === false)
-        {
+        if ($this->config->requireActivation === false) {
             return true;
         }
 
@@ -37,8 +38,7 @@ class UserActivator
         $class = new $className();
         $class->setConfig($this->config);
 
-        if ($class->send($user) === false)
-        {
+        if ($class->send($user) === false) {
             log_message('error', "Failed to send activation messaage to: {$user->email}");
             $this->error = $class->error();
 
@@ -57,5 +57,4 @@ class UserActivator
     {
         return $this->error;
     }
-
 }

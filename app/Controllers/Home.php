@@ -19,6 +19,18 @@ class Home extends BaseController
 		$this->cartModel = new CartModel();
 		$this->barangModel = new BarangModel();
 	}
+	public function login()
+	{
+		return view('auth/login');
+	}
+	public function register()
+	{
+		return view('auth/register');
+	}
+	public function user()
+	{
+		return view('user/index');
+	}
 	public function index()
 	{
 		$data = [

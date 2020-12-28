@@ -27,6 +27,9 @@ $routes->setDefaultNamespace('App\Controllers');
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
+$routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
+$routes->get('/admin(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
+$routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/pages/all', 'Pages::all');
 $routes->get('/pages/clothes', 'Pages::byKategori/pakaian');
 $routes->get('/pages/shoes', 'Pages::byKategori/sepatu');
@@ -41,6 +44,7 @@ $routes->get('/pages/cart/delete/(:any)', 'Cart::delete/$1');
 $routes->get('/cart/update/(:any)', 'Cart::update/$1');
 
 
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing
@@ -49,7 +53,7 @@ $routes->get('/cart/update/(:any)', 'Cart::update/$1');
  * There will often be times that you need additional routing and you
  * need it to be able to override any defaults in this file. Environment
  * based routes is one such time. require() additional route files here
- * to make that happen.
+ * to make that happen. 
  *
  * You will have access to the $routes object within that file without
  * needing to reload it.
