@@ -51,51 +51,6 @@ class Pages extends BaseController
 
         return view('pages/clothes', $data);
     }
-
-    // public function shoes($kategori)
-    // {
-
-    //     $data = [
-    //         'judul' => 'Home | WebProgrammingUNPAS',
-    //         'barang' => $this->barangModel->getBarangByKategori($kategori)
-    //     ];
-
-    //     return view('pages/shoes', $data);
-    // }
-
-    // public function bag($kategori)
-    // {
-
-    //     $data = [
-    //         'judul' => 'Home | WebProgrammingUNPAS',
-    //         'barang' => $this->barangModel->getBarangByKategori($kategori)
-    //     ];
-
-    //     return view('pages/bag', $data);
-    // }
-
-    // public function cap($kategori)
-    // {
-
-    //     $data = [
-    //         'judul' => 'Home | WebProgrammingUNPAS',
-    //         'barang' => $this->barangModel->getBarangByKategori($kategori)
-    //     ];
-
-    //     return view('pages/cap', $data);
-    // }
-
-    // public function kids($kategori)
-    // {
-
-    //     $data = [
-    //         'judul' => 'Home | WebProgrammingUNPAS',
-    //         'barang' => $this->barangModel->getBarangByKategori($kategori)
-    //     ];
-
-    //     return view('pages/kids', $data);
-    // }
-
     public function all()
     {
 

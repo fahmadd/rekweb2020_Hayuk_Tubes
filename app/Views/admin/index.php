@@ -18,10 +18,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $i = 1; ?>
+                    <?php $i = 0; ?>
                     <?php foreach ($users as $user) : ?>
+                        <?php $i++; ?>
                         <tr>
-                            <th scope="row"><?= $i++; ?>1</th>
+                            <td><?= $i; ?></td>
                             <td><?= $user->username; ?></td>
                             <td><?= $user->email; ?></td>
                             <td><?= $user->name; ?></td>

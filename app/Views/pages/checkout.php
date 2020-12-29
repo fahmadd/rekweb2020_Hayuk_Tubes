@@ -51,7 +51,13 @@
                             </div>
                             <div class="col-lg-6 form-group">
                                 <label class="text-small text-uppercase" for="country">Country</label>
-                                <select class="selectpicker country" id="country" data-width="fit" data-style="form-control form-control-lg" data-title="Select your country"></select>
+                                <select class="selectpicker country" id="country2" data-width="fit" data-style="form-control form-control-lg" data-title="Select your country">
+                                    <?php foreach ($alamat as $al) : ?>
+                                        <option>
+                                            <?= $al['city_name']; ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                             <div class="col-lg-12 form-group">
                                 <label class="text-small text-uppercase" for="address">Address line 1</label>
@@ -102,7 +108,13 @@
                                     </div>
                                     <div class="col-lg-6 form-group">
                                         <label class="text-small text-uppercase" for="country2">Country</label>
-                                        <select class="selectpicker country" id="country2" data-width="fit" data-style="form-control form-control-lg" data-title="Select your country"></select>
+                                        <select class="selectpicker country" id="country2" data-width="fit" data-style="form-control form-control-lg" data-title="Select your country">
+                                            <?php foreach ($alamat as $al) : ?>
+                                                <option>
+                                                    <?= $al['city_name']; ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
                                     <div class="col-lg-12 form-group">
                                         <label class="text-small text-uppercase" for="address2">Address line 1</label>

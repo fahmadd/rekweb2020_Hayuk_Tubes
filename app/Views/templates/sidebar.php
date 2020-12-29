@@ -20,9 +20,9 @@
 
         <!-- Nav Item - User List -->
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('admin'); ?>">
-                <i class="fas fa-users"></i>
-                <span>User List</span></a>
+            <a class="nav-link" href="/admin/listproduk">
+                <i class="fa fa-database"></i>
+                <span>Daftar Produk</span></a>
         </li>
 
     <?php endif; ?>
@@ -37,18 +37,10 @@
 
     <!-- Nav Item - My Profile -->
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('user'); ?>">
-            <i class="fas fa-user"></i>
-            <span>My Profile</span></a>
+        <a class="nav-link" href="<?= base_url('admin'); ?>">
+            <i class="fas fa-users"></i>
+            <span>User List</span></a>
     </li>
-
-    <!-- Nav Item - edit Profile -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <i class="fas fa-user-edit"></i>
-            <span>Edit Profile</span></a>
-    </li>
-
     <!-- Divider -->
     <hr class="sidebar-divider">
 

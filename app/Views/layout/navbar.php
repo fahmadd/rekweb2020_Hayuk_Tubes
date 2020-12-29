@@ -23,6 +23,7 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="/Admin"> <i class="fa fa-cog mr-1 text-gray"></i>Halaman Admin</a></li>
                         <li class="nav-item"><a class="nav-link" href="/pages/cart"> <i class="fas fa-dolly-flatbed mr-1 text-gray"></i>Cart</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?= base_url('logout'); ?>"> <i class="fas fa-user-alt mr-1 text-gray"></i>Logout</a></li>
                     </ul>

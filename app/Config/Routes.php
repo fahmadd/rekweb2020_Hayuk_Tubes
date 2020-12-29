@@ -28,8 +28,8 @@ $routes->setDefaultNamespace('App\Controllers');
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
-$routes->get('/admin(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
-$routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
+$routes->get('/admin/(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
+$routes->get('/admin/listproduk', 'Admin::produk', ['filter' => 'role:admin']);
 $routes->get('/pages/all', 'Pages::all');
 $routes->get('/pages/clothes', 'Pages::byKategori/pakaian');
 $routes->get('/pages/shoes', 'Pages::byKategori/sepatu');
